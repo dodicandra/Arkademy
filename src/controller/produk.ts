@@ -5,7 +5,7 @@ import { Produk } from '../entity/Produk';
 
 export async function getDataProduk(req: Request, res: Response) {
   try {
-    const produk = await Produk.find();
+    const produk = await Produk.find({ order: { createdAt: 'DESC' } });
     return res.json({ produk });
   } catch (err) {
     return res.status(500).json({ message: 'terjadi kesalahan' });
@@ -13,7 +13,7 @@ export async function getDataProduk(req: Request, res: Response) {
 }
 
 export async function createProduk(req: Request, res: Response) {
-  const { namaProduk, keterangan, harga, jumlah } = req.body as Produk;
+  const { namaProduk, keterangan, harga, jumlah, id_produk } = req.body as Produk;
   try {
     let errors: any = {};
     // validasi input

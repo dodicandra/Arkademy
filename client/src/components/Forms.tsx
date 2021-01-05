@@ -15,7 +15,7 @@ interface FormsProps {
 
 const Forms: React.FC<FormsProps> = ({ onComplete }) => {
   const { dispatch, state } = useProduk();
-  console.log(state.produk);
+
   const onSubmit = useCallback(
     async (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
       e.preventDefault();
