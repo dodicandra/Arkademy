@@ -1,5 +1,6 @@
 import 'reflect-metadata';
 
+import cors from 'cors';
 import { config } from 'dotenv';
 import express from 'express';
 import morgan from 'morgan';
@@ -15,6 +16,12 @@ const PORT = process.env.PORT;
 app.use(express.json());
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: true, limit: '100mb' }));
+app.use(
+  cors({
+    origin: '*',
+    optionsSuccessStatus: 200,
+  })
+);
 
 app.use('/api/produk', produkRoute);
 
