@@ -19,8 +19,7 @@
 
     "noUnusedLocals": false,
     "noUnusedParameters": false,
-    "noImplicitReturns": false,
-    "baseUrl": "."
+    "noImplicitReturns": false
   },
   "include": ["ormconfig.json", "src/", "./src/**/*.tsx", "./src/**/*.ts"],
   "exclude": ["node_modules"]
