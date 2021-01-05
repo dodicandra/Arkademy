@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "class-transformer": "^0.3.1",
+    "concurrently": "^5.3.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "morgan": "^1.10.0",
@@ -24,12 +25,14 @@
   },
   "scripts": {
     "start": "ts-node src/server.ts",
-    "serve": "nodemon --exec ts-node src/server.ts",
+    "server": "nodemon --exec ts-node src/server.ts",
     "start:prod": "node build/server.js",
     "build": "rm -rf build/ && tsc -b tsconfig.json",
     "dev": "nodemon ./build/src/server.js",
     "ts": "rm -rf build/ && tsc -w",
-    "typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js"
+    "typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js",
+    "client": "cd client && npm run start",
+    "dev:all": "concurrently \"npm run server\" \"npm run client\" --names server,client"
   },
   "license": "MIT"
 }
