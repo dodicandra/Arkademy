@@ -1,10 +1,10 @@
-import { Column, Entity as TOEntity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity as TOEntity } from 'typeorm';
 
 import Entity from './Entity';
 
 @TOEntity({ name: 'users' })
-export class User extends Entity {
-  constructor(user: Partial<User>) {
+export class Produk extends Entity {
+  constructor(user: Partial<Produk>) {
     super();
     Object.assign(this, user);
   }

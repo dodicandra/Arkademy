@@ -1,7 +1,8 @@
 {
   "name": "nodejs",
   "version": "0.0.1",
-  "description": "Awesome project developed with TypeORM.",
+  "description": "Arkademy",
+  "type": "commonjs",
   "devDependencies": {
     "@types/express": "^4.17.9",
     "@types/morgan": "^1.9.2",
@@ -21,6 +22,10 @@
   },
   "scripts": {
     "start": "ts-node src/server.ts",
+    "start:prod": "node build/server.js",
+    "build": "rm -rf build/ && tsc -b tsconfig.json",
+    "dev": "nodemon ./build/src/server.js",
+    "ts": "rm -rf build/ && tsc -w",
     "typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js"
   },
   "license": "MIT"

@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
+    "target": "es6",
     "lib": ["es5", "es6", "ESNext"],
-    "target": "es5",
     "module": "commonjs",
-    "moduleResolution": "node",
+    "moduleResolution": "Node",
     "outDir": "./build",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -12,6 +12,16 @@
     "strict": true,
     "strictNullChecks": true,
     "allowSyntheticDefaultImports": true,
-    "skipDefaultLibCheck": true
-  }
+    "skipDefaultLibCheck": true,
+    "resolveJsonModule": true,
+    "alwaysStrict": true,
+    "noImplicitThis": true,
+
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noImplicitReturns": false,
+    "baseUrl": "."
+  },
+  "include": ["ormconfig.json", "src/", "./src/**/*.tsx", "./src/**/*.ts"],
+  "exclude": ["node_modules"]
 }
